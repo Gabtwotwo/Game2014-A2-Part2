@@ -8,6 +8,7 @@ public class MovingPlatformController : MonoBehaviour
     public Transform end;
     public bool isActive;
     public float platformTimer;
+    public PlayerBehaviour playerRef;
 
 
     private Vector3 distance;
@@ -25,9 +26,14 @@ public class MovingPlatformController : MonoBehaviour
     {
         if (isActive)
         {
-            platformTimer += Time.deltaTime;
+            platformTimer += 0.02f;
             _Move();
 
+        }
+        if(playerRef.resetPlatforms == true)
+        {
+            playerRef.resetPlatforms = false;
+            transform.position = start.position;
         }
 
     }

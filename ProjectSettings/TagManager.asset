@@ -12,9 +12,10 @@ TagManager:
   - Opossum
   - Enemy
   - Bullet
-  - Acorn
   - Gem
   - Moving Platform
+  - Door
+  - Blob
   layers:
   - Default
   - TransparentFX

@@ -77,7 +77,7 @@ public class BulletFactory
             //    tempBullet = MonoBehaviour.Instantiate(pulsingBullet);
             //    tempBullet.GetComponent<BulletController>().damage = 30;
             //    break;
-            case BulletType.ACORN:
+            case BulletType.BLOB:
                 tempBullet = MonoBehaviour.Instantiate(blobBullet);
                 tempBullet.GetComponent<GrenadeBehaviour>().damage = 10;
                 break;

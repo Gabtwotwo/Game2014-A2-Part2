@@ -42,7 +42,7 @@ public class BulletManager
     /// </summary>
     /// <param name="max_bullets"></param>
     /// <param name="enemyBulletType"></param>
-    public void Init(int max_bullets = 50, BulletType enemyBulletType = BulletType.REGULAR, BulletType playerBulletType = BulletType.ACORN)
+    public void Init(int max_bullets = 50, BulletType enemyBulletType = BulletType.REGULAR, BulletType playerBulletType = BulletType.BLOB)
     {   // step 4 initialize class variables and start the bullet pool build
         MaxBullets = max_bullets;
         _BuildBulletPool(enemyBulletType, playerBulletType);

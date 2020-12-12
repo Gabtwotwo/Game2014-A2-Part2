@@ -11,7 +11,7 @@ public enum RampDirection
 }
 
 
-public class OpossumBehaviour : MonoBehaviour
+public class AstronautBehaviour : MonoBehaviour
 {
     [Header("Movement")]
     public float runForce;
@@ -25,7 +25,7 @@ public class OpossumBehaviour : MonoBehaviour
     public RampDirection rampDirection;
 
     [Header("AI")]
-    public LOS opossumLOS;
+    public LOS astronautLOS;
 
     [Header("Bullet Firing")] 
     public Transform bulletSpawn;
@@ -82,9 +82,9 @@ public class OpossumBehaviour : MonoBehaviour
 
     private bool _hasLOS()
     {
-        if (opossumLOS.colliders.Count > 0)
+        if (astronautLOS.colliders.Count > 0)
         {
-            if (opossumLOS.collidesWith.gameObject.name == "Player" || opossumLOS.colliders[0].gameObject.name == "Player")
+            if (astronautLOS.collidesWith.gameObject.name == "Player" || astronautLOS.colliders[0].gameObject.name == "Player")
             {
                 return true;
             }
@@ -223,7 +223,7 @@ public class OpossumBehaviour : MonoBehaviour
             Dead();
         }
 
-        if (other.gameObject.CompareTag("Acorn"))
+        if (other.gameObject.CompareTag("Blob"))
         {
             TakeDamage(50);
         }

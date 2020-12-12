@@ -45,6 +45,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int lives;
     public BarController healthBar;
     public Animator livesHUD;
+    public bool resetPlatforms;
 
     [Header("Dust Trail")]
     public ParticleSystem dustTrail;
@@ -267,6 +268,10 @@ public class PlayerBehaviour : MonoBehaviour
 
             HealDamage(10);
         }
+        if (other.gameObject.CompareTag("Door"))
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -314,6 +319,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (lives > 0)
         {
+            resetPlatforms = true;
             health = 100;
             healthBar.SetValue(health);
             transform.position = spawnPoint.position;

@@ -9,5 +9,5 @@ public enum BulletType
     FAT,
     PULSING,
     RANDOM,
-    ACORN
+    BLOB
 }
