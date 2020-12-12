@@ -9,10 +9,10 @@ public class BulletFactory
     private static BulletFactory m_instance = null;
 
     // prefab references
-    private GameObject regularBullet;
+    //private GameObject regularBullet;
     private GameObject fatBullet;
-    private GameObject pulsingBullet;
-    private GameObject acornBullet;
+    //private GameObject pulsingBullet;
+    private GameObject blobBullet;
 
     // game controller reference
     private GameController gameController;
@@ -41,10 +41,10 @@ public class BulletFactory
     {
         // 4. create a Resources folder
         // 5. move our Prefabs folder into the Resources folder
-        regularBullet = Resources.Load("Prefabs/Bullet") as GameObject;
+       // regularBullet = Resources.Load("Prefabs/Bullet") as GameObject;
         fatBullet = Resources.Load("Prefabs/Fat Bullet") as GameObject;
-        pulsingBullet = Resources.Load("Prefabs/Pulsing Bullet") as GameObject;
-        acornBullet = Resources.Load("Prefabs/Acorn Bullet") as GameObject;
+       // pulsingBullet = Resources.Load("Prefabs/Pulsing Bullet") as GameObject;
+        blobBullet = Resources.Load("Prefabs/Blob Attack") as GameObject;
 
         gameController = GameObject.FindObjectOfType<GameController>();
     }
@@ -65,20 +65,20 @@ public class BulletFactory
         GameObject tempBullet = null;
         switch (type)
         {
-            case BulletType.REGULAR:
-                tempBullet = MonoBehaviour.Instantiate(regularBullet);
-                tempBullet.GetComponent<BulletController>().damage = 10;
-                break;
+            //case BulletType.REGULAR:
+            //    tempBullet = MonoBehaviour.Instantiate(regularBullet);
+            //    tempBullet.GetComponent<BulletController>().damage = 10;
+            //    break;
             case BulletType.FAT:
                 tempBullet = MonoBehaviour.Instantiate(fatBullet);
                 tempBullet.GetComponent<BulletController>().damage = 20;
                 break;
-            case BulletType.PULSING:
-                tempBullet = MonoBehaviour.Instantiate(pulsingBullet);
-                tempBullet.GetComponent<BulletController>().damage = 30;
-                break;
+            //case BulletType.PULSING:
+            //    tempBullet = MonoBehaviour.Instantiate(pulsingBullet);
+            //    tempBullet.GetComponent<BulletController>().damage = 30;
+            //    break;
             case BulletType.ACORN:
-                tempBullet = MonoBehaviour.Instantiate(acornBullet);
+                tempBullet = MonoBehaviour.Instantiate(blobBullet);
                 tempBullet.GetComponent<GrenadeBehaviour>().damage = 10;
                 break;
         }
